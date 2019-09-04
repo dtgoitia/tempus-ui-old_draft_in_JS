@@ -1,0 +1,23 @@
+.planner {
+  border: 1px solid black;
+  background-color: antiquewhite;
+
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  align-items: stretch;
+  height: 0;  /* required to avoid pushing the parent out of the screen */
+}
+
+.plan-explorer {
+  border: 5px solid green;
+  
+  flex: 0 0 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.plan-editor {
+  border: 5px solid blue;
+  flex: 1 0 auto;
+}

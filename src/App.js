@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Link } from "react-router-dom";
 
-function Planner() {
-  return <h2>Planner</h2>;
-}
+import Planner from './Planner';
+import './App.css';
 
 function Player() {
   return (
@@ -26,7 +25,8 @@ function Stats() {
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app">
+        <p>TODO: rework this navbar</p>
         <nav>
           <ul>
             <li>
