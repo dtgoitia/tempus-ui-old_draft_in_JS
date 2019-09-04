@@ -1,25 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Redirect, Route, Link } from "react-router-dom";
+
+function Planner() {
+  return <h2>Planner</h2>;
+}
+
+function Player() {
+  return (
+    <>
+      <h2>Player</h2>
+      <div>Under construction</div>
+    </>
+  );
+}
+
+function Stats() {
+  return (
+    <>
+      <h2>Stats</h2>
+      <div>Under construction</div>
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/planner">Planner</Link>
+            </li>
+            <li>
+              <Link to="/player">Player</Link>
+            </li>
+            <li>
+              <Link to="/stats">Stats</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Route path="/" exact render={() => <Redirect to="/planner" />} />
+        <Route path="/planner" component={Planner} />
+        <Route path="/player" component={Player} />
+        <Route path="/stats" component={Stats} />
+        {/* TODO: set up 404 page not found component */}
+      </div>
+    </Router>
   );
 }
 
