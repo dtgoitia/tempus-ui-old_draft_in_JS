@@ -1,0 +1,9 @@
+.plan-editor {
+  display: flex;
+  flex-direction: column;
+}
+
+.nothing-selected {
+  align-items: center; 
+  justify-content: center;
+}

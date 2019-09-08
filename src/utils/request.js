@@ -1,7 +1,10 @@
 import { ajax } from 'rxjs/ajax';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, delay } from 'rxjs/operators';
 import { empty, of, merge, ReplaySubject } from 'rxjs';
 import { DISABLE_CORS } from '../constans';
+import config from '../shared/config/getConfig';
+
+const REQUEST_DELAY = config.getNumber('REQUEST_DELAY');
 
 const http = {
   method: {
@@ -57,6 +60,7 @@ function requestFactory(method) {
             requestInfo,
           };
         }),
+        delay(REQUEST_DELAY),
       );
 
     return merge(inflight$, request$);

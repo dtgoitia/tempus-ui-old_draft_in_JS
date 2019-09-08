@@ -58,7 +58,9 @@ class Planner extends React.Component {
     return (
       <div className="planner">
         <PlanExplorer plans={this.state.plans} loading={this.state.loading} />
-        <PlanEditor plan={this.state.selectedPlan} />
+        <PlanEditor
+          plan={this.state.selectedPlan}
+          loading={this.state.loadingSelectedPlan} />
       </div>
     );
   }
